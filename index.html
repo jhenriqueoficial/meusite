@@ -4,7 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="Portfólio de João Henrique da Silva - Especialista em servidores e segurança da informação. Explore minhas habilidades, formação, projetos e entre em contato.">
+    <meta name="keywords" content="segurança da informação, servidores, pentest, João Henrique da Silva, portfólio">
+    <meta name="author" content="João Henrique da Silva">
     <title>João Henrique da Silva - Portfólio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         * {
             margin: 0;
@@ -56,6 +59,7 @@
             text-decoration: none;
             margin: 0 1.5rem;
             font-size: 1.1rem;
+            transition: color 0.3s ease;
         }
 
         nav a:hover {
@@ -65,7 +69,7 @@
         section {
             max-width: 900px;
             margin: 2rem auto;
-            padding: 1rem;
+            padding: 2rem;
             background-color: #1e1e1e;
             border: 1px solid #333;
             border-radius: 8px;
@@ -73,7 +77,7 @@
 
         .section-title {
             color: #e91e63;
-            margin-bottom: 1rem;
+            margin-bottom: 1.5rem;
             border-bottom: 1px solid #333;
             padding-bottom: 0.5rem;
             font-size: 1.5rem;
@@ -94,11 +98,21 @@
             margin-right: 0.5rem;
         }
 
+        a {
+            color: #ffffff; /* Links em branco */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        a:hover {
+            color: #e91e63; /* Cor rosa ao passar o mouse */
+        }
+
         footer {
             background-color: #1a1a1a;
             color: #e0e0e0;
             text-align: center;
-            padding: 1rem 0;
+            padding: 1.5rem 0;
             margin-top: 2rem;
             border-top: 2px solid #e91e63;
         }
@@ -108,11 +122,39 @@
             text-decoration: none;
             font-weight: bold;
         }
+
+        #back-to-top {
+            display: none;
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: #e91e63;
+            color: #fff;
+            border: none;
+            border-radius: 50%;
+            padding: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        #back-to-top:hover {
+            background-color: #c2185b;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+            nav a {
+                margin: 0.5rem 0;
+            }
+        }
     </style>
 </head>
 <body>
     <header>
-        <img src="Design sem nome.png" alt="João Henrique da Silva">
+        <img src="Design sem nome.png" alt="Foto de João Henrique da Silva">
         <h1>João Henrique da Silva</h1>
         <p>Especialista em Servidores e Segurança da Informação</p>
     </header>
@@ -166,14 +208,30 @@
     <section id="contato">
         <h2 class="section-title">Contato</h2>
         <ul>
-            <li>Telefone: <a href="tel:+5545999280636">(45) 99928-0636</a></li>
-            <li>Email: <a href="mailto:joaohenriquedasilvacontato@gmail.com">joaohenriquedasilvacontato@gmail.com</a></li>
-            <li>Endereço: Av. Renê Gomes Napoli, 134 - Centro, Ibema - PR</li>
+            <li><i class="fas fa-phone"></i> <a href="tel:+5545999280636">(45) 99928-0636</a></li>
+            <li><i class="fas fa-envelope"></i> <a href="mailto:joaohenriquedasilvacontato@gmail.com">joaohenriquedasilvacontato@gmail.com</a></li>
         </ul>
     </section>
 
     <footer>
         <p>&copy; 2025 João Henrique da Silva. Desenvolvido com HTML e CSS</p>
     </footer>
+
+    <button id="back-to-top" title="Voltar ao topo">↑</button>
+
+    <script>
+        window.onscroll = function() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                document.getElementById("back-to-top").style.display = "block";
+            } else {
+                document.getElementById("back-to-top").style.display = "none";
+            }
+        };
+
+        document.getElementById("back-to-top").onclick = function() {
+            document.body.scrollTop = 0;
+            document.documentElement.scrollTop = 0;
+        };
+    </script>
 </body>
 </html>
